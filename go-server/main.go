@@ -7,6 +7,7 @@ import (
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Method is", r.Method)
 	if r.URL.Path != "/hello" {
 		http.Error(w, "404 not found", http.StatusNotFound)
 		return
